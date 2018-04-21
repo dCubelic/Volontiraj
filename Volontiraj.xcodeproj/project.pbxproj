@@ -14,10 +14,17 @@
 		A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBC31943C2540017F096 /* AppDelegate.swift */; };
 		A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCA1943C2540017F096 /* Main.storyboard */; };
 		A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCD1943C2540017F096 /* Images.xcassets */; };
-		A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */; };
-		A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E767C5194594DC00869113 /* ToDoItemViewController.swift */; };
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
+		B415128D208B70EF00FF9261 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415128C208B70EF00FF9261 /* LoginViewController.swift */; };
+		B4151290208B77D000FF9261 /* AkcijaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415128E208B77D000FF9261 /* AkcijaCollectionViewCell.swift */; };
+		B4151291208B77D000FF9261 /* AkcijaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */; };
+		B4151293208B77E800FF9261 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4151292208B77E800FF9261 /* HomeViewController.swift */; };
+		B4151295208B7A2100FF9261 /* UIStoryboard+V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4151294208B7A2100FF9261 /* UIStoryboard+V.swift */; };
+		B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4151296208B7A3000FF9261 /* UITableView+V.swift */; };
+		B4151299208B7A3C00FF9261 /* UICollectionView+V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */; };
+		B415129C208B818900FF9261 /* AkcijaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */; };
+		B415129E208B876300FF9261 /* GoingPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +37,18 @@
 		A2D9CBC31943C2540017F096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D9CBCB1943C2540017F096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2D9CBCD1943C2540017F096 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		A2D9CBE81943D1340017F096 /* Volontiraj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volontiraj-Bridging-Header.h"; sourceTree = "<group>"; };
-		A2E767C5194594DC00869113 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		B415128C208B70EF00FF9261 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B415128E208B77D000FF9261 /* AkcijaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkcijaCollectionViewCell.swift; sourceTree = "<group>"; };
+		B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AkcijaCollectionViewCell.xib; sourceTree = "<group>"; };
+		B4151292208B77E800FF9261 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B4151294208B7A2100FF9261 /* UIStoryboard+V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+V.swift"; sourceTree = "<group>"; };
+		B4151296208B7A3000FF9261 /* UITableView+V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+V.swift"; sourceTree = "<group>"; };
+		B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+V.swift"; sourceTree = "<group>"; };
+		B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkcijaDetailViewController.swift; sourceTree = "<group>"; };
+		B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +99,15 @@
 				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
+				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
+				B4151292208B77E800FF9261 /* HomeViewController.swift */,
+				B415128E208B77D000FF9261 /* AkcijaCollectionViewCell.swift */,
+				B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */,
+				B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */,
+				B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
+				B415129A208B7A4600FF9261 /* Extensions */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
-				A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */,
-				A2E767C5194594DC00869113 /* ToDoItemViewController.swift */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Volontiraj-Bridging-Header.h */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
@@ -111,6 +130,16 @@
 			);
 			name = frameworks;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		B415129A208B7A4600FF9261 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4151294208B7A2100FF9261 /* UIStoryboard+V.swift */,
+				B4151296208B7A3000FF9261 /* UITableView+V.swift */,
+				B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +206,7 @@
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
+				B4151291208B77D000FF9261 /* AkcijaCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
+				B4151293208B77E800FF9261 /* HomeViewController.swift in Sources */,
+				B4151299208B7A3C00FF9261 /* UICollectionView+V.swift in Sources */,
+				B415128D208B70EF00FF9261 /* LoginViewController.swift in Sources */,
+				B415129C208B818900FF9261 /* AkcijaDetailViewController.swift in Sources */,
+				B415129E208B876300FF9261 /* GoingPeopleCollectionViewCell.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
-				A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */,
+				B4151295208B7A2100FF9261 /* UIStoryboard+V.swift in Sources */,
+				B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
+				B4151290208B77D000FF9261 /* AkcijaCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

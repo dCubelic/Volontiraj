@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AkcijaCollectionViewCell" customModule="Volontiraj" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="196"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="196"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nature" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-X6-CnK">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="196"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Akcija skupljanja smeca" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-sY-tIS">
+                        <rect key="frame" x="8" y="10" width="184" height="48"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22.04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMT-Ss-Ph0">
+                        <rect key="frame" x="138" y="164" width="54" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYN-bU-1FD">
+                        <rect key="frame" x="8" y="169" width="24.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VCC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB3-Rn-Lzg">
+                        <rect key="frame" x="8" y="58" width="25" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="oE9-sY-tIS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="9bu-oJ-qO5"/>
+                <constraint firstAttribute="trailing" secondItem="oE9-sY-tIS" secondAttribute="trailing" constant="8" id="ADY-cF-jNu"/>
+                <constraint firstItem="iVm-X6-CnK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ioe-RC-Cre"/>
+                <constraint firstItem="lYN-bU-1FD" firstAttribute="centerY" secondItem="wMT-Ss-Ph0" secondAttribute="centerY" id="JeQ-0l-igu"/>
+                <constraint firstAttribute="trailing" secondItem="wMT-Ss-Ph0" secondAttribute="trailing" constant="8" id="PO1-fO-Xga"/>
+                <constraint firstAttribute="bottom" secondItem="iVm-X6-CnK" secondAttribute="bottom" id="QF7-Ex-fNm"/>
+                <constraint firstItem="oE9-sY-tIS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="RLX-Tn-Dp9"/>
+                <constraint firstAttribute="trailing" secondItem="iVm-X6-CnK" secondAttribute="trailing" id="VQ2-mi-6ZS"/>
+                <constraint firstItem="QB3-Rn-Lzg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bAX-is-AmH"/>
+                <constraint firstItem="iVm-X6-CnK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dvr-sI-g0L"/>
+                <constraint firstItem="lYN-bU-1FD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gkw-UP-F7M"/>
+                <constraint firstAttribute="bottom" secondItem="wMT-Ss-Ph0" secondAttribute="bottom" constant="8" id="kBA-wA-302"/>
+                <constraint firstItem="QB3-Rn-Lzg" firstAttribute="top" secondItem="oE9-sY-tIS" secondAttribute="bottom" id="xbl-nE-uzw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="200" height="196"/>
+            <connections>
+                <outlet property="dateLabel" destination="wMT-Ss-Ph0" id="Kq8-zO-lSp"/>
+                <outlet property="imageViewLabel" destination="iVm-X6-CnK" id="zo5-8g-kSR"/>
+                <outlet property="imeAkcijeLabel" destination="oE9-sY-tIS" id="Bty-qB-4Vl"/>
+                <outlet property="numberOfPeopleLabel" destination="lYN-bU-1FD" id="xEU-NV-Kr2"/>
+                <outlet property="organizationNameLabel" destination="QB3-Rn-Lzg" id="0bA-Cx-aFB"/>
+            </connections>
+            <point key="canvasLocation" x="109" y="127"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Nature" width="1920" height="1080"/>
+    </resources>
+</document>
