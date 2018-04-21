@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmN-xB-6h2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2886" y="168"/>
+            <point key="canvasLocation" x="2993" y="169"/>
         </scene>
         <!--Azure Mobile Apps-->
         <scene sceneID="yNt-7v-plj">
@@ -182,7 +182,7 @@
         <!--Item 2-->
         <scene sceneID="EkJ-Up-tgl">
             <objects>
-                <viewController id="00e-uj-AGB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="00e-uj-AGB" customClass="SearchViewController" customModule="Volontiraj" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YrK-7m-J87"/>
                         <viewControllerLayoutGuide type="bottom" id="e4C-lA-4Gw"/>
@@ -190,13 +190,73 @@
                     <view key="view" contentMode="scaleToFill" id="7VX-bJ-ShZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jPY-By-0AU">
+                                <rect key="frame" x="0.0" y="181" width="375" height="421"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zzy-tN-YPs">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qcy-FJ-MCW">
+                                        <rect key="frame" x="16" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="00e-uj-AGB" id="Ezh-Ye-O4a"/>
+                                    <outlet property="delegate" destination="00e-uj-AGB" id="NZg-Ti-IJF"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pretraga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-9G-b6X">
+                                <rect key="frame" x="8" y="30" width="109" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Akcije u blizini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiv-mO-fPP">
+                                <rect key="frame" x="8" y="136" width="150.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nht-OQ-dXr">
+                                <rect key="frame" x="0.0" y="72" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jPY-By-0AU" firstAttribute="leading" secondItem="7VX-bJ-ShZ" secondAttribute="leading" id="2pR-Fc-RTb"/>
+                            <constraint firstItem="jPY-By-0AU" firstAttribute="top" secondItem="Qiv-mO-fPP" secondAttribute="bottom" constant="16" id="7di-qn-vIq"/>
+                            <constraint firstAttribute="trailing" secondItem="nht-OQ-dXr" secondAttribute="trailing" id="8B0-dg-OvC"/>
+                            <constraint firstItem="Qiv-mO-fPP" firstAttribute="leading" secondItem="7VX-bJ-ShZ" secondAttribute="leading" constant="8" id="ON8-dM-B2u"/>
+                            <constraint firstItem="nht-OQ-dXr" firstAttribute="leading" secondItem="7VX-bJ-ShZ" secondAttribute="leading" id="UxG-Ju-bc1"/>
+                            <constraint firstItem="e4C-lA-4Gw" firstAttribute="top" secondItem="jPY-By-0AU" secondAttribute="bottom" constant="16" id="XhS-gb-1ct"/>
+                            <constraint firstItem="DnX-9G-b6X" firstAttribute="leading" secondItem="7VX-bJ-ShZ" secondAttribute="leading" constant="8" id="XjH-2M-wEW"/>
+                            <constraint firstItem="Qiv-mO-fPP" firstAttribute="top" secondItem="nht-OQ-dXr" secondAttribute="bottom" constant="8" id="ZbI-Un-bDd"/>
+                            <constraint firstAttribute="trailing" secondItem="jPY-By-0AU" secondAttribute="trailing" id="bbw-ZM-Cq3"/>
+                            <constraint firstItem="nht-OQ-dXr" firstAttribute="top" secondItem="DnX-9G-b6X" secondAttribute="bottom" constant="8" id="nft-gr-XrI"/>
+                            <constraint firstItem="DnX-9G-b6X" firstAttribute="top" secondItem="YrK-7m-J87" secondAttribute="bottom" constant="10" id="nyl-Nb-7jr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="a7z-qq-e8s"/>
+                    <connections>
+                        <outlet property="akcijeUBliziniLabel" destination="Qiv-mO-fPP" id="5Ue-qp-DUJ"/>
+                        <outlet property="collectionView" destination="jPY-By-0AU" id="wUd-qr-yJG"/>
+                        <outlet property="searchBar" destination="nht-OQ-dXr" id="7F4-qV-a7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfr-dP-Q4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="1717"/>
+            <point key="canvasLocation" x="2240.8000000000002" y="1716.7916041979013"/>
         </scene>
         <!--Item-->
         <scene sceneID="ekh-us-NNr">
