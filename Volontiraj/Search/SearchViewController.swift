@@ -47,6 +47,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
+        
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {

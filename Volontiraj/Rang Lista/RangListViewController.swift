@@ -67,5 +67,11 @@ extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: ProfilePopupViewController.self)
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        present(vc, animated: false, completion: nil)
     }
 }

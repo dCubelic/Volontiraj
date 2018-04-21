@@ -54,4 +54,12 @@ extension AkcijaDetailViewController: UICollectionViewDelegate, UICollectionView
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: ProfilePopupViewController.self)
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        present(vc, animated: false, completion: nil)
+    }
 }
