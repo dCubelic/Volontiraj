@@ -51,20 +51,10 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        if let searchTextField: UITextField = searchBar.value(forKey: "searchField") as? UITextField {
-//            searchTextField.attributedPlaceholder = nil
-//        }
         searchBar.setShowsCancelButton(true, animated: true)
-//        peopleCompanyContainerView.isHidden = false
-//        interestsContainerView.isHidden = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        if searchBar.text?.isEmpty == true {
-//            if let searchTextField: UITextField = searchBar.value(forKey: "searchField") as? UITextField {
-//                searchTextField.attributedPlaceholder = NSAttributedString(string: "Search by Name or Company", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-//            }
-//        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

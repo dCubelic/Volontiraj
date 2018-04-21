@@ -28,6 +28,9 @@
 		B41512A1208B89CE00FF9261 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */; };
 		B41512A2208B89CE00FF9261 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */; };
 		B41512A6208B95ED00FF9261 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512A5208B95ED00FF9261 /* SearchViewController.swift */; };
+		B41512A9208BA38D00FF9261 /* RangListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512A8208BA38D00FF9261 /* RangListViewController.swift */; };
+		B41512AC208BA39C00FF9261 /* RangListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512AA208BA39C00FF9261 /* RangListTableViewCell.swift */; };
+		B41512AD208BA39C00FF9261 /* RangListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41512AB208BA39C00FF9261 /* RangListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
 		B41512A5208B95ED00FF9261 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B41512A8208BA38D00FF9261 /* RangListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangListViewController.swift; sourceTree = "<group>"; };
+		B41512AA208BA39C00FF9261 /* RangListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangListTableViewCell.swift; sourceTree = "<group>"; };
+		B41512AB208BA39C00FF9261 /* RangListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RangListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +112,11 @@
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
-				B41512A5208B95ED00FF9261 /* SearchViewController.swift */,
+				B41512A8208BA38D00FF9261 /* RangListViewController.swift */,
+				B41512AA208BA39C00FF9261 /* RangListTableViewCell.swift */,
+				B41512AB208BA39C00FF9261 /* RangListTableViewCell.xib */,
 				B41512A4208B8ACB00FF9261 /* Home */,
-				B41512A3208B8ABE00FF9261 /* Akcija Detail */,
+				B41512A7208B9FE800FF9261 /* Search */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
 				B415129A208B7A4600FF9261 /* Extensions */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
@@ -163,8 +171,17 @@
 				B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */,
 				B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */,
 				B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */,
+				B41512A3208B8ABE00FF9261 /* Akcija Detail */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B41512A7208B9FE800FF9261 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B41512A5208B95ED00FF9261 /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +250,7 @@
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
 				B4151291208B77D000FF9261 /* AkcijaCollectionViewCell.xib in Resources */,
+				B41512AD208BA39C00FF9261 /* RangListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +268,8 @@
 				B415129E208B876300FF9261 /* GoingPeopleCollectionViewCell.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
 				B41512A6208B95ED00FF9261 /* SearchViewController.swift in Sources */,
+				B41512AC208BA39C00FF9261 /* RangListTableViewCell.swift in Sources */,
+				B41512A9208BA38D00FF9261 /* RangListViewController.swift in Sources */,
 				B4151295208B7A2100FF9261 /* UIStoryboard+V.swift in Sources */,
 				B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
