@@ -179,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="1357.5999999999999" y="1002.5487256371815"/>
         </scene>
-        <!--Item 2-->
+        <!--Pretraga-->
         <scene sceneID="EkJ-Up-tgl">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="00e-uj-AGB" customClass="SearchViewController" customModule="Volontiraj" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                             <constraint firstItem="DnX-9G-b6X" firstAttribute="top" secondItem="YrK-7m-J87" secondAttribute="bottom" constant="10" id="nyl-Nb-7jr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="a7z-qq-e8s"/>
+                    <tabBarItem key="tabBarItem" title="Pretraga" image="Search" id="a7z-qq-e8s"/>
                     <connections>
                         <outlet property="akcijeUBliziniLabel" destination="Qiv-mO-fPP" id="5Ue-qp-DUJ"/>
                         <outlet property="collectionView" destination="jPY-By-0AU" id="wUd-qr-yJG"/>
@@ -258,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="2240.8000000000002" y="1716.7916041979013"/>
         </scene>
-        <!--Item-->
+        <!--Rang Lista-->
         <scene sceneID="ekh-us-NNr">
             <objects>
                 <viewController storyboardIdentifier="RangListViewController" id="7nF-5J-63m" customClass="RangListViewController" customModule="Volontiraj" customModuleProvider="target" sceneMemberID="viewController">
@@ -355,7 +355,7 @@
                             <constraint firstItem="uXg-Xo-12M" firstAttribute="top" secondItem="nSL-iA-ouX" secondAttribute="bottom" constant="8" id="syh-PH-cOU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="fNm-XQ-wgM"/>
+                    <tabBarItem key="tabBarItem" title="Rang Lista" image="Rang" id="fNm-XQ-wgM"/>
                     <connections>
                         <outlet property="segmentControl" destination="sK5-V0-ljm" id="03B-TP-lok"/>
                         <outlet property="tableView" destination="Pfm-uA-ahN" id="C8O-EL-vKz"/>
@@ -371,7 +371,7 @@
             </objects>
             <point key="canvasLocation" x="2240.8000000000002" y="2416.6416791604202"/>
         </scene>
-        <!--Item-->
+        <!--Profil-->
         <scene sceneID="Ah6-Jv-lw8">
             <objects>
                 <viewController id="jhy-Jt-lxR" sceneMemberID="viewController">
@@ -384,7 +384,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wZC-VR-vQp"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="PersonIcon" id="wZC-VR-vQp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faG-Ft-QBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,7 +477,7 @@
                             <constraint firstItem="UU8-mt-Z5Z" firstAttribute="top" secondItem="4xi-ld-hv7" secondAttribute="bottom" constant="16" id="xjV-Hc-Wxc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="tU7-iO-eIV"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="tU7-iO-eIV"/>
                     <connections>
                         <outlet property="collectionView" destination="b2q-KK-rPg" id="cxt-uS-wQN"/>
                         <outlet property="tableView" destination="qSN-nD-5pi" id="Nue-wx-QdO"/>
@@ -518,7 +518,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u5-K9-tZn">
-                                <rect key="frame" x="16" y="211" width="34" height="21"/>
+                                <rect key="frame" x="16" y="211.5" width="34" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -624,26 +624,37 @@
                                     <constraint firstAttribute="bottom" secondItem="cOt-7n-K6z" secondAttribute="bottom" id="vmJ-6O-v0C"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-x9-hGm">
-                                <rect key="frame" x="329" y="16" width="30" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-x9-hGm">
+                                <rect key="frame" x="323" y="24" width="36" height="36"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="Close">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="closeAction:" destination="5p3-SP-ouF" eventType="touchUpInside" id="rH9-Jv-rH9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-nZ-jt2">
-                                <rect key="frame" x="324" y="133" width="35" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="✓">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-nZ-jt2">
+                                <rect key="frame" x="319" y="156" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RS2-nZ-jt2" secondAttribute="height" multiplier="1:1" id="4aa-XW-qTo"/>
+                                    <constraint firstAttribute="height" constant="40" id="puL-sV-Kc1"/>
+                                </constraints>
+                                <state key="normal" image="notDone">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goingAction:" destination="5p3-SP-ouF" eventType="touchUpInside" id="BQf-RG-PgQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonIcon" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-ul-a38">
+                                <rect key="frame" x="58" y="211.5" width="20" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Idb-L5-ZRE"/>
+                                    <constraint firstAttribute="width" secondItem="u6K-ul-a38" secondAttribute="height" multiplier="1:1" id="J6E-Rz-rHM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -657,6 +668,7 @@
                             <constraint firstItem="bMo-oQ-oNq" firstAttribute="top" secondItem="KoV-Aj-pRp" secondAttribute="bottom" id="Gf1-Z4-gZ0"/>
                             <constraint firstAttribute="trailing" secondItem="smg-UG-Upv" secondAttribute="trailing" constant="100" id="HRi-39-9EP"/>
                             <constraint firstItem="xg1-aU-5Jl" firstAttribute="leading" secondItem="fOP-vO-KvN" secondAttribute="leading" constant="16" id="Lzx-cA-DtQ"/>
+                            <constraint firstItem="u6K-ul-a38" firstAttribute="leading" secondItem="7u5-K9-tZn" secondAttribute="trailing" constant="8" id="MxC-tH-qHl"/>
                             <constraint firstItem="KoV-Aj-pRp" firstAttribute="baseline" secondItem="sbn-eD-X9U" secondAttribute="firstBaseline" constant="12.5" symbolType="layoutAnchor" id="ZnC-P6-hXS"/>
                             <constraint firstAttribute="trailing" secondItem="hrA-x9-hGm" secondAttribute="trailing" constant="16" id="auL-hS-SUi"/>
                             <constraint firstItem="sbn-eD-X9U" firstAttribute="top" secondItem="RS2-nZ-jt2" secondAttribute="bottom" constant="8" id="cEf-cO-uY5"/>
@@ -664,14 +676,16 @@
                             <constraint firstItem="bMo-oQ-oNq" firstAttribute="leading" secondItem="fOP-vO-KvN" secondAttribute="leading" id="esI-ck-0dg"/>
                             <constraint firstAttribute="trailing" secondItem="bMo-oQ-oNq" secondAttribute="trailing" id="gJ0-8t-a4N"/>
                             <constraint firstAttribute="trailing" secondItem="sbn-eD-X9U" secondAttribute="trailing" constant="16" id="iXn-pK-a8p"/>
-                            <constraint firstItem="hrA-x9-hGm" firstAttribute="top" secondItem="fOP-vO-KvN" secondAttribute="top" constant="16" id="lsp-aH-pDu"/>
                             <constraint firstItem="7u5-K9-tZn" firstAttribute="centerY" secondItem="sbn-eD-X9U" secondAttribute="centerY" id="ltv-sh-H5P"/>
                             <constraint firstAttribute="trailing" secondItem="KoV-Aj-pRp" secondAttribute="trailing" id="nVr-9U-T2e"/>
+                            <constraint firstItem="hrA-x9-hGm" firstAttribute="top" secondItem="smg-UG-Upv" secondAttribute="top" id="vq7-tq-0xR"/>
+                            <constraint firstItem="u6K-ul-a38" firstAttribute="centerY" secondItem="7u5-K9-tZn" secondAttribute="centerY" id="wWZ-4r-ArT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="sbn-eD-X9U" id="zvi-GL-kwe"/>
                         <outlet property="descriptionLabel" destination="UvX-lK-t5j" id="NC9-IM-bbE"/>
+                        <outlet property="goingButton" destination="RS2-nZ-jt2" id="PMM-Sc-XwU"/>
                         <outlet property="imageView" destination="KoV-Aj-pRp" id="Ipf-rE-2lA"/>
                         <outlet property="imeAkcijeLabel" destination="smg-UG-Upv" id="1xV-n2-uaU"/>
                         <outlet property="imeOrganizacijeLabel" destination="xg1-aU-5Jl" id="QgL-Q1-el2"/>
@@ -704,7 +718,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Nature" width="1920" height="1080"/>
-        <image name="Person" width="524" height="350"/>
+        <image name="Close" width="36" height="36"/>
+        <image name="Home" width="36" height="36"/>
+        <image name="Nature" width="960" height="540"/>
+        <image name="Person" width="262" height="175"/>
+        <image name="PersonIcon" width="36" height="36"/>
+        <image name="Rang" width="36" height="36"/>
+        <image name="Search" width="36" height="36"/>
+        <image name="notDone" width="125" height="125"/>
     </resources>
 </document>

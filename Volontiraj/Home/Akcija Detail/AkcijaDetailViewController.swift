@@ -16,6 +16,7 @@ class AkcijaDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var goingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,8 @@ class AkcijaDetailViewController: UIViewController {
     }
 
     @IBAction func goingAction(_ sender: Any) {
-        
+        goingButton.setImage(#imageLiteral(resourceName: "done"), for: .normal)
+        goingButton.alpha = 0.7
     }
     
     @IBAction func closeAction(_ sender: Any) {
