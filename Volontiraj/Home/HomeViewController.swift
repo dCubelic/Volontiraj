@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var akcije: [Akcija] = []
+    var newsFeed: [NewsFeed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.loadAkcije()
+            self.loadNewsFeed()
         }
         
         collectionView.register(UINib(nibName: "AkcijaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AkcijaCollectionViewCell")
@@ -51,17 +53,60 @@ class HomeViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func loadNewsFeed() {
+        guard let currentUser = User.currentUser else { return }
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let followsTable = client.table(withName: "FollowsTable")
+        let newsFeedTable = client.table(withName: "NewsFeed")
         
-//        table.read { (result, error) in
-//            if let items = result?.items {
-//                for item in items {
-//                    let akcija = Akcija(with: item)
-//                    print(akcija?.id)
-//                }
-//            } else {
-//                print("nece")
-//            }
-//        }
+        
+        followsTable.read(with: NSPredicate(format: "UserID == %@", currentUser.id)) { (result, error) in
+            if let items = result?.items {
+                for item in items {
+                    let userID = item["UserID2"] as! String
+                    newsFeedTable.read(with: NSPredicate(format: "UserID == %@", userID), completion: { (result, error) in
+                        if let items = result?.items {
+                            for item in items {
+                                self.loadPerson(item: item)
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
+    private func loadPerson(item: [AnyHashable: Any]) {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let userTable = client.table(withName: "Users")
+        
+        
+        userTable.read(withId: item["UserID"]) { (dict, error) in
+            if let dict = dict, let user = User(with: dict) {
+                self.loadAkcija(user: user, item: item)
+            }
+        }
+    }
+    
+    private func loadAkcija(user: User, item: [AnyHashable: Any]) {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let akcijeTable = client.table(withName: "Akcije")
+        
+        akcijeTable.read(withId: item["AkcijaID"]) { (dict, error) in
+            if let dict = dict, let akcija = Akcija(with: dict) {
+                self.loadFeed(user: user, akcija: akcija, item: item)
+            }
+        }
+    }
+    
+    private func loadFeed(user: User, akcija: Akcija, item: [AnyHashable: Any]) {
+        if let vrijeme = item["vrijeme"] as? Date,
+            let type = item["type"] as? Int {
+            newsFeed.append(NewsFeed(user: user, akcija: akcija, vrijeme: vrijeme, type: type))
+            self.tableView.reloadData()
+        }
     }
 
 }
@@ -93,11 +138,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return newsFeed.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: StatusTableViewCell.self, for: indexPath)
+
+        cell.setup(with: newsFeed[indexPath.row])
         
         return cell
     }

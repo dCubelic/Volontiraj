@@ -20,8 +20,12 @@ class RangListViewController: UIViewController {
     @IBOutlet weak var volonterMjesecaBrojSatiLabel: UILabel!
     @IBOutlet weak var trenutniMjesecLabel: UILabel!
     
+    var users: [User] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadUsers()
         
         volonterMjesecaImageView.layer.cornerRadius = volonterMjesecaImageView.frame.height / 2
         volonterMjesecaImageView.layer.masksToBounds = true
@@ -30,6 +34,23 @@ class RangListViewController: UIViewController {
         volonterMjesecaView.backgroundColor = UIColor(white: 240/255, alpha: 1)
         
         tableView.register(UINib(nibName: "RangListTableViewCell", bundle: nil), forCellReuseIdentifier: "RangListTableViewCell")
+    }
+    
+    private func loadUsers() {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let table = client.table(withName: "Users")
+        
+        table.read { (result, error) in
+            if let items = result?.items {
+                for item in items {
+                    if let user = User(with: item) {
+                        self.users.append(user)
+                        self.users.sort { $0.satiVolontiranja > $1.satiVolontiranja }
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
@@ -56,11 +77,13 @@ class RangListViewController: UIViewController {
 
 extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: RangListTableViewCell.self, for: indexPath)
+        
+        cell.setup(with: users[indexPath.row])
         
         return cell
     }

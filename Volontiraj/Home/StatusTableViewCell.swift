@@ -14,6 +14,12 @@ class StatusTableViewCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM."
+        return df
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,4 +27,13 @@ class StatusTableViewCell: UITableViewCell {
         personImageView.layer.masksToBounds = true
     }
     
+    func setup(with newsFeed: NewsFeed) {
+        switch newsFeed.type {
+        case .organizacija:
+            statusLabel.text = "\(newsFeed.user.ime) organizira novu akciju: \(newsFeed.akcija.ime)"
+        case .pridruzivanje:
+            statusLabel.text = "\(newsFeed.user.ime) pridruzio se akciji: \(newsFeed.akcija.ime)"
+        }
+        dateLabel.text = dateFormatter.string(from: newsFeed.vrijeme)
+    }
 }

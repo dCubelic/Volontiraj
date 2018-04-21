@@ -43,8 +43,10 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="96M-GO-leI" secondAttribute="trailing" constant="8" id="3G2-Jf-yma"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kx2-4t-6Ow" secondAttribute="bottom" constant="20" id="6Sb-4c-tn4"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ee7-OV-ssg" secondAttribute="bottom" constant="8" id="C5B-tk-33J"/>
                     <constraint firstAttribute="bottom" secondItem="96M-GO-leI" secondAttribute="bottom" constant="4" id="CBb-hU-Ab1"/>
                     <constraint firstAttribute="trailing" secondItem="kx2-4t-6Ow" secondAttribute="trailing" constant="8" id="Ou6-vG-2C2"/>
+                    <constraint firstItem="Ee7-OV-ssg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aJ3-Dd-TzV"/>
                     <constraint firstItem="kx2-4t-6Ow" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="f2k-lf-DOA"/>
                     <constraint firstItem="Ee7-OV-ssg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gJG-RO-DzX"/>
                     <constraint firstItem="Ee7-OV-ssg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="npY-nr-QbX"/>
@@ -61,6 +63,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Person" width="524" height="350"/>
+        <image name="Person" width="262" height="175"/>
     </resources>
 </document>

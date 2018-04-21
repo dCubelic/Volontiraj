@@ -21,4 +21,9 @@ class RangListTableViewCell: UITableViewCell {
         personImageView.layer.masksToBounds = true
     }
     
+    func setup(with user: User) {
+        imeLabel.text = "\(user.ime) \(user.prezime)"
+        brojSatiLabel.text = "\(user.satiVolontiranja)"
+    }
+    
 }

@@ -14,9 +14,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var akcijeUBliziniLabel: UILabel!
     
+    var akcije: [Akcija] = []
+    var nearbyAkcije: [Akcija] = []
+    var filteredAkcije: [Akcija] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadNearbyAkcije()
+        loadSveAkcije()
+        
         searchBar.backgroundImage = UIImage()
         searchBar.keyboardAppearance = .dark
         searchBar.delegate = self
@@ -27,6 +34,40 @@ class SearchViewController: UIViewController {
         
         collectionView.register(UINib(nibName: "AkcijaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AkcijaCollectionViewCell")
     }
+    
+    private func loadSveAkcije() {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let table = client.table(withName: "Akcije")
+        
+        table.read { (result, error) in
+            if let items = result?.items {
+                for item in items {
+                    if let akcija = Akcija(with: item) {
+                        self.akcije.append(akcija)
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    private func loadNearbyAkcije() {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let table = client.table(withName: "Akcije")
+        
+        table.read { (result, error) in
+            if let items = result?.items {
+                for item in items {
+                    if let akcija = Akcija(with: item) {
+                        self.nearbyAkcije.append(akcija)
+                        self.filteredAkcije = self.nearbyAkcije
+                        self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
+        
+    }
 
 }
 
@@ -34,16 +75,18 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        let width = collectionView.frame.width / 2
-        let height = (collectionView.frame.height - 85) / 2
+        let height = (collectionView.frame.height - 10) / 2
         return CGSize(width: height, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return filteredAkcije.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(ofType: AkcijaCollectionViewCell.self, for: indexPath)
+        
+        cell.setup(with: filteredAkcije[indexPath.row])
         
         return cell
     }
@@ -65,6 +108,8 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        filteredAkcije = nearbyAkcije
+        collectionView.reloadData()
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.resignFirstResponder()
     }
@@ -74,6 +119,13 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        if searchText.count == 0 {
+            filteredAkcije = nearbyAkcije
+        } else {
+            filteredAkcije = akcije.filter({ (akcija) -> Bool in
+                akcija.ime.lowercased().contains(searchText.lowercased())
+            })
+        }
+        collectionView.reloadData()
     }
 }

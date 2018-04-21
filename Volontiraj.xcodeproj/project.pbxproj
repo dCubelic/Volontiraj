@@ -36,6 +36,7 @@
 		B41512B4208BC26A00FF9261 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B3208BC26A00FF9261 /* User.swift */; };
 		B41512B6208BC62400FF9261 /* Akcija.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B5208BC62400FF9261 /* Akcija.swift */; };
 		B41512B8208BCE2800FF9261 /* UserAkcije.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B7208BCE2800FF9261 /* UserAkcije.swift */; };
+		B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B9208BE8A500FF9261 /* NewsFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		B41512B3208BC26A00FF9261 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B41512B5208BC62400FF9261 /* Akcija.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Akcija.swift; sourceTree = "<group>"; };
 		B41512B7208BCE2800FF9261 /* UserAkcije.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAkcije.swift; sourceTree = "<group>"; };
+		B41512B9208BE8A500FF9261 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
 				B41512B3208BC26A00FF9261 /* User.swift */,
 				B41512B5208BC62400FF9261 /* Akcija.swift */,
+				B41512B9208BE8A500FF9261 /* NewsFeed.swift */,
 				B41512B7208BCE2800FF9261 /* UserAkcije.swift */,
 				B41512AF208BB94400FF9261 /* ProfilViewController.swift */,
 				B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */,
@@ -302,6 +305,7 @@
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 				B4151290208B77D000FF9261 /* AkcijaCollectionViewCell.swift in Sources */,
 				B41512B2208BBED000FF9261 /* ProfilePopupViewController.swift in Sources */,
+				B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */,
 				B41512A1208B89CE00FF9261 /* StatusTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
