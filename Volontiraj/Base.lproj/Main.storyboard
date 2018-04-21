@@ -248,8 +248,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-nD-5pi">
-                                <rect key="frame" x="0.0" y="301" width="375" height="317"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-nD-5pi">
+                                <rect key="frame" x="0.0" y="305" width="375" height="313"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="6xj-cK-6yv" id="Wza-Zl-PLh"/>
@@ -310,7 +310,7 @@
                             <constraint firstItem="qSN-nD-5pi" firstAttribute="leading" secondItem="hSf-PU-SzC" secondAttribute="leading" id="7ab-OQ-qpz"/>
                             <constraint firstAttribute="trailing" secondItem="zoE-lb-8LR" secondAttribute="trailing" id="FEn-ue-b4b"/>
                             <constraint firstAttribute="trailing" secondItem="qSN-nD-5pi" secondAttribute="trailing" id="LeD-Lb-EdE"/>
-                            <constraint firstItem="qSN-nD-5pi" firstAttribute="top" secondItem="ur1-2Z-aO1" secondAttribute="bottom" id="Mun-Uk-1yp"/>
+                            <constraint firstItem="qSN-nD-5pi" firstAttribute="top" secondItem="ur1-2Z-aO1" secondAttribute="bottom" constant="4" id="Mun-Uk-1yp"/>
                             <constraint firstItem="b2q-KK-rPg" firstAttribute="leading" secondItem="hSf-PU-SzC" secondAttribute="leading" id="NoB-5M-7oo"/>
                             <constraint firstItem="7dD-5u-wib" firstAttribute="top" secondItem="qSN-nD-5pi" secondAttribute="bottom" id="RdW-9x-GYx"/>
                             <constraint firstAttribute="trailing" secondItem="ur1-2Z-aO1" secondAttribute="trailing" id="WXw-LS-EZa"/>
@@ -379,7 +379,7 @@
                                 <rect key="frame" x="0.0" y="250" width="375" height="417"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOt-7n-K6z">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvX-lK-t5j">
                                                 <rect key="frame" x="16" y="16" width="343" height="21"/>
@@ -388,7 +388,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1O-dC-Wc9">
-                                                <rect key="frame" x="0.0" y="45" width="375" height="80"/>
+                                                <rect key="frame" x="0.0" y="53" width="375" height="80"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="sqo-yV-KcT"/>
@@ -441,7 +441,7 @@
                                                 </connections>
                                             </collectionView>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-3h-hsH">
-                                                <rect key="frame" x="0.0" y="133" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="149" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="QRR-aa-o6I"/>
                                                 </constraints>
@@ -449,12 +449,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="g1O-dC-Wc9" firstAttribute="top" secondItem="UvX-lK-t5j" secondAttribute="bottom" constant="8" id="Qwb-TS-aDU"/>
+                                            <constraint firstItem="g1O-dC-Wc9" firstAttribute="top" secondItem="UvX-lK-t5j" secondAttribute="bottom" constant="16" id="Qwb-TS-aDU"/>
                                             <constraint firstAttribute="trailing" secondItem="Huk-3h-hsH" secondAttribute="trailing" id="RnG-76-HY3"/>
                                             <constraint firstItem="UvX-lK-t5j" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" constant="16" id="Zbj-lt-h86"/>
                                             <constraint firstItem="g1O-dC-Wc9" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" id="gAJ-WW-zfb"/>
                                             <constraint firstItem="Huk-3h-hsH" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" id="gnJ-Fd-0qd"/>
-                                            <constraint firstItem="Huk-3h-hsH" firstAttribute="top" secondItem="g1O-dC-Wc9" secondAttribute="bottom" constant="8" id="iFh-ij-gpt"/>
+                                            <constraint firstItem="Huk-3h-hsH" firstAttribute="top" secondItem="g1O-dC-Wc9" secondAttribute="bottom" constant="16" id="iFh-ij-gpt"/>
                                             <constraint firstAttribute="trailing" secondItem="g1O-dC-Wc9" secondAttribute="trailing" id="ipA-rd-P5D"/>
                                             <constraint firstAttribute="trailing" secondItem="UvX-lK-t5j" secondAttribute="trailing" constant="16" id="jKZ-k4-5m6"/>
                                             <constraint firstAttribute="bottom" secondItem="Huk-3h-hsH" secondAttribute="bottom" id="msH-46-eHx"/>

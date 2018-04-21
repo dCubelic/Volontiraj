@@ -25,6 +25,8 @@
 		B4151299208B7A3C00FF9261 /* UICollectionView+V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */; };
 		B415129C208B818900FF9261 /* AkcijaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */; };
 		B415129E208B876300FF9261 /* GoingPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */; };
+		B41512A1208B89CE00FF9261 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */; };
+		B41512A2208B89CE00FF9261 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+V.swift"; sourceTree = "<group>"; };
 		B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkcijaDetailViewController.swift; sourceTree = "<group>"; };
 		B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +104,8 @@
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
-				B4151292208B77E800FF9261 /* HomeViewController.swift */,
-				B415128E208B77D000FF9261 /* AkcijaCollectionViewCell.swift */,
-				B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */,
-				B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */,
-				B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */,
+				B41512A4208B8ACB00FF9261 /* Home */,
+				B41512A3208B8ABE00FF9261 /* Akcija Detail */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
 				B415129A208B7A4600FF9261 /* Extensions */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
@@ -140,6 +141,27 @@
 				B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B41512A3208B8ABE00FF9261 /* Akcija Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */,
+				B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */,
+			);
+			path = "Akcija Detail";
+			sourceTree = "<group>";
+		};
+		B41512A4208B8ACB00FF9261 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B4151292208B77E800FF9261 /* HomeViewController.swift */,
+				B415128E208B77D000FF9261 /* AkcijaCollectionViewCell.swift */,
+				B415128F208B77D000FF9261 /* AkcijaCollectionViewCell.xib */,
+				B415129F208B89CE00FF9261 /* StatusTableViewCell.swift */,
+				B41512A0208B89CE00FF9261 /* StatusTableViewCell.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
+				B41512A2208B89CE00FF9261 /* StatusTableViewCell.xib in Resources */,
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
 				B4151291208B77D000FF9261 /* AkcijaCollectionViewCell.xib in Resources */,
@@ -227,6 +250,7 @@
 				B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 				B4151290208B77D000FF9261 /* AkcijaCollectionViewCell.swift in Sources */,
+				B41512A1208B89CE00FF9261 /* StatusTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
