@@ -16,6 +16,12 @@ class AkcijaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageViewLabel: UIImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
     
+    let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM."
+        return df
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,6 +29,12 @@ class AkcijaCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = true
     }
     
+    func setup(with akcija: Akcija) {
+        imeAkcijeLabel.text = akcija.ime
+        numberOfPeopleLabel.text = "\(akcija.brojLjudi)/\(akcija.potrebnoLjudi)"
+        dateLabel.text = dateFormatter.string(from: akcija.vrijeme)
+        organizationNameLabel.text = akcija.organizator
+    }
     
 
 }

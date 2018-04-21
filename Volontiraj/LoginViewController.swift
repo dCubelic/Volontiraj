@@ -27,7 +27,8 @@ class LoginViewController: UIViewController {
         table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", username, pass)) { (result, error) in
             if let items = result?.items {
                 if items.count == 1 {
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+                    User.currentUser = User(with: items[0])
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
                     self.present(vc, animated: true, completion: nil)
                 } else {
 //                    print("los count")
