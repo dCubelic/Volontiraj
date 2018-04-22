@@ -59,7 +59,7 @@ class RegisterViewController: UIViewController {
         
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            guard let ime = imeTextField.text, let prezime = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            guard let ime = imeTextField.text, let prezime = secondTextField.text, let email = emailTextField.text?.lowercased(), let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
             
             let newItem: [String: Any] = [
                 "Ime": ime,
@@ -98,6 +98,20 @@ class RegisterViewController: UIViewController {
             })
         default:
             return
+        }
+        
+        guard let email = emailTextField.text?.lowercased(), let password = passwordTextField.text else { return }
+        
+        table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", email, "\(password.hash)")) { (result, error) in
+            if let items = result?.items {
+                if items.count == 1 {
+                    User.currentUser = User(with: items[0])
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    self.navigationController?.popViewController(animated: false)
+                }
+            }
         }
     }
 }

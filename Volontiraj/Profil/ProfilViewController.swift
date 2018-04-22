@@ -14,6 +14,7 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var brojSatiLabel: UILabel!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     var akcije: [Akcija] = []
     
@@ -80,6 +81,13 @@ extension ProfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if akcije.count == 0 {
+            emptyLabel.isHidden = false
+            collectionView.isHidden = true
+        } else {
+            emptyLabel.isHidden = true
+            collectionView.isHidden = false
+        }
         return akcije.count
     }
     
@@ -95,6 +103,6 @@ extension ProfilViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
         vc.akcija = akcije[indexPath.row]
         
-        present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }

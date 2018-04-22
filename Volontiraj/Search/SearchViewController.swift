@@ -98,7 +98,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
         vc.akcija = filteredAkcije[indexPath.row]
         
-        present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

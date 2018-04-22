@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "Users")
         
-        guard let username = usernameTextField.text, let pass = passwordTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased(), let pass = passwordTextField.text else { return }
         
         table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", username, "\(pass.hash)")) { (result, error) in
             if let items = result?.items {

@@ -18,6 +18,7 @@ class AkcijaDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -85,7 +86,7 @@ class AkcijaDetailViewController: UIViewController {
     @IBAction func goingAction(_ sender: Any) {
         if going {
             goingButton.setImage(#imageLiteral(resourceName: "notDone"), for: .normal)
-            goingButton.alpha = 0.3
+            goingButton.alpha = 0.7
             
             removeUserFromUserAkcije()
             going = false
@@ -152,6 +153,13 @@ extension AkcijaDetailViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if users.count == 0 {
+            emptyLabel.isHidden = false
+            collectionView.isHidden = true
+        } else {
+            emptyLabel.isHidden = true
+            collectionView.isHidden = false
+        }
         return users.count
     }
     

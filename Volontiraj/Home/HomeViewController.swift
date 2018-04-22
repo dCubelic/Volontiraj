@@ -161,7 +161,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
         vc.akcija = akcije[indexPath.row]
         
-        present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

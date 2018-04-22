@@ -318,7 +318,7 @@
                             <constraint firstItem="DnX-9G-b6X" firstAttribute="top" secondItem="YrK-7m-J87" secondAttribute="bottom" constant="16" id="nyl-Nb-7jr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Akcije" image="Search" id="a7z-qq-e8s"/>
+                    <tabBarItem key="tabBarItem" title="Akcije" image="volunteer" id="a7z-qq-e8s"/>
                     <connections>
                         <outlet property="akcijeUBliziniLabel" destination="Qiv-mO-fPP" id="5Ue-qp-DUJ"/>
                         <outlet property="collectionView" destination="jPY-By-0AU" id="wUd-qr-yJG"/>
@@ -623,6 +623,12 @@
                                     <outlet property="delegate" destination="jhy-Jt-lxR" id="B6E-mh-dJ0"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potrebno se pridružiti u akcije kako bi se one prikazale" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-pV-s8b">
+                                <rect key="frame" x="30" y="475.5" width="315" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nm-sg-veX">
                                 <rect key="frame" x="16" y="372" width="359" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -646,9 +652,11 @@
                             <constraint firstItem="6Nm-sg-veX" firstAttribute="top" secondItem="9K6-U9-r1C" secondAttribute="bottom" constant="8" id="0ml-Cw-xys"/>
                             <constraint firstAttribute="trailing" secondItem="6Nm-sg-veX" secondAttribute="trailing" id="0pO-VT-8KM"/>
                             <constraint firstAttribute="trailing" secondItem="4Uq-IA-z8S" secondAttribute="trailing" constant="16" id="5vr-6G-tFU"/>
+                            <constraint firstAttribute="trailing" secondItem="uGt-pV-s8b" secondAttribute="trailing" constant="30" id="6at-kq-fCd"/>
                             <constraint firstItem="9K6-U9-r1C" firstAttribute="top" secondItem="LTT-HN-yJY" secondAttribute="bottom" id="6hy-Xw-8ZD"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I0o-lS-JlQ" secondAttribute="trailing" constant="20" symbolic="YES" id="9Wi-tb-UtR"/>
                             <constraint firstItem="0Wy-Fw-ZSC" firstAttribute="top" secondItem="UsC-kB-Osn" secondAttribute="bottom" id="9kk-Hg-YVR"/>
+                            <constraint firstItem="uGt-pV-s8b" firstAttribute="centerY" secondItem="UsC-kB-Osn" secondAttribute="centerY" id="9pr-J0-bfn"/>
                             <constraint firstAttribute="trailing" secondItem="rcp-WT-yl7" secondAttribute="trailing" id="BPt-2c-6ce"/>
                             <constraint firstItem="sSI-Eu-TBk" firstAttribute="top" secondItem="iUF-Na-cHO" secondAttribute="bottom" constant="16" id="FpF-W7-pGw"/>
                             <constraint firstItem="UsC-kB-Osn" firstAttribute="leading" secondItem="mgE-EU-x1c" secondAttribute="leading" id="IEt-Aw-2T8"/>
@@ -661,16 +669,19 @@
                             <constraint firstItem="LTT-HN-yJY" firstAttribute="centerX" secondItem="mgE-EU-x1c" secondAttribute="centerX" id="btf-dc-dmH"/>
                             <constraint firstAttribute="trailing" secondItem="UsC-kB-Osn" secondAttribute="trailing" id="c5G-V9-uPE"/>
                             <constraint firstItem="LTT-HN-yJY" firstAttribute="top" secondItem="sSI-Eu-TBk" secondAttribute="bottom" id="cGi-qC-XuQ"/>
+                            <constraint firstItem="uGt-pV-s8b" firstAttribute="leading" secondItem="mgE-EU-x1c" secondAttribute="leading" constant="30" id="cbJ-nz-Dxt"/>
                             <constraint firstItem="9K6-U9-r1C" firstAttribute="centerX" secondItem="mgE-EU-x1c" secondAttribute="centerX" id="hP4-D4-TMm"/>
                             <constraint firstItem="UsC-kB-Osn" firstAttribute="top" secondItem="6Nm-sg-veX" secondAttribute="bottom" id="lgz-pr-mtO"/>
                             <constraint firstItem="rcp-WT-yl7" firstAttribute="leading" secondItem="mgE-EU-x1c" secondAttribute="leading" constant="16" id="ow5-Bw-MkL"/>
                             <constraint firstItem="I0o-lS-JlQ" firstAttribute="top" secondItem="Kkp-22-Xuz" secondAttribute="bottom" constant="16" id="pJe-Ro-qdc"/>
+                            <constraint firstItem="uGt-pV-s8b" firstAttribute="centerX" secondItem="mgE-EU-x1c" secondAttribute="centerX" id="yCq-0g-Cbj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profil" image="PersonIcon" id="wZC-VR-vQp"/>
                     <connections>
                         <outlet property="brojSatiLabel" destination="LTT-HN-yJY" id="99F-EE-FZf"/>
                         <outlet property="collectionView" destination="UsC-kB-Osn" id="ehd-1w-OPB"/>
+                        <outlet property="emptyLabel" destination="uGt-pV-s8b" id="fd1-cb-3jy"/>
                         <outlet property="personImageView" destination="iUF-Na-cHO" id="Jek-Wu-6uG"/>
                         <outlet property="personNameLabel" destination="sSI-Eu-TBk" id="wqq-jI-2G5"/>
                     </connections>
@@ -808,7 +819,7 @@
             </objects>
             <point key="canvasLocation" x="2240.8000000000002" y="4008.8455772113948"/>
         </scene>
-        <!--Home-->
+        <!--Aktivnosti-->
         <scene sceneID="WVU-0y-31R">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="6xj-cK-6yv" customClass="HomeViewController" customModule="Volontiraj" customModuleProvider="target" sceneMemberID="viewController">
@@ -933,7 +944,7 @@
                             <constraint firstItem="UU8-mt-Z5Z" firstAttribute="top" secondItem="4xi-ld-hv7" secondAttribute="bottom" constant="16" id="xjV-Hc-Wxc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="tU7-iO-eIV"/>
+                    <tabBarItem key="tabBarItem" title="Aktivnosti" image="news" id="tU7-iO-eIV"/>
                     <connections>
                         <outlet property="collectionView" destination="b2q-KK-rPg" id="cxt-uS-wQN"/>
                         <outlet property="emptyCollectionLabel" destination="MlP-Ft-cmj" id="lyZ-QR-A29"/>
@@ -1057,6 +1068,12 @@
                                                     <outlet property="delegate" destination="5p3-SP-ouF" id="sP1-ek-0f8"/>
                                                 </connections>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nitko još ne sudjeluje u ovoj volonterskoj akciji." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0M-7m-ZQv">
+                                                <rect key="frame" x="30" y="73" width="315" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Huk-3h-hsH">
                                                 <rect key="frame" x="0.0" y="149" width="375" height="200"/>
                                                 <constraints>
@@ -1069,6 +1086,8 @@
                                             <constraint firstItem="g1O-dC-Wc9" firstAttribute="top" secondItem="UvX-lK-t5j" secondAttribute="bottom" constant="16" id="Qwb-TS-aDU"/>
                                             <constraint firstAttribute="trailing" secondItem="Huk-3h-hsH" secondAttribute="trailing" id="RnG-76-HY3"/>
                                             <constraint firstItem="UvX-lK-t5j" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" constant="16" id="Zbj-lt-h86"/>
+                                            <constraint firstItem="l0M-7m-ZQv" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" constant="30" id="a5m-nr-FvW"/>
+                                            <constraint firstItem="l0M-7m-ZQv" firstAttribute="centerY" secondItem="g1O-dC-Wc9" secondAttribute="centerY" id="adw-iC-tUh"/>
                                             <constraint firstItem="g1O-dC-Wc9" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" id="gAJ-WW-zfb"/>
                                             <constraint firstItem="Huk-3h-hsH" firstAttribute="leading" secondItem="cOt-7n-K6z" secondAttribute="leading" id="gnJ-Fd-0qd"/>
                                             <constraint firstItem="Huk-3h-hsH" firstAttribute="top" secondItem="g1O-dC-Wc9" secondAttribute="bottom" constant="16" id="iFh-ij-gpt"/>
@@ -1076,6 +1095,8 @@
                                             <constraint firstAttribute="trailing" secondItem="UvX-lK-t5j" secondAttribute="trailing" constant="16" id="jKZ-k4-5m6"/>
                                             <constraint firstAttribute="bottom" secondItem="Huk-3h-hsH" secondAttribute="bottom" id="msH-46-eHx"/>
                                             <constraint firstItem="UvX-lK-t5j" firstAttribute="top" secondItem="cOt-7n-K6z" secondAttribute="top" constant="16" id="sAA-FI-SFg"/>
+                                            <constraint firstAttribute="trailing" secondItem="l0M-7m-ZQv" secondAttribute="trailing" constant="30" id="vPO-3S-yeX"/>
+                                            <constraint firstItem="l0M-7m-ZQv" firstAttribute="centerX" secondItem="cOt-7n-K6z" secondAttribute="centerX" id="zw0-4g-Ut1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1097,7 +1118,7 @@
                                     <action selector="closeAction:" destination="5p3-SP-ouF" eventType="touchUpInside" id="rH9-Jv-rH9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-nZ-jt2">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-nZ-jt2">
                                 <rect key="frame" x="319" y="156" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RS2-nZ-jt2" secondAttribute="height" multiplier="1:1" id="4aa-XW-qTo"/>
@@ -1155,6 +1176,7 @@
                         <outlet property="collectionView" destination="g1O-dC-Wc9" id="9kQ-QR-aXb"/>
                         <outlet property="dateLabel" destination="sbn-eD-X9U" id="zvi-GL-kwe"/>
                         <outlet property="descriptionLabel" destination="UvX-lK-t5j" id="NC9-IM-bbE"/>
+                        <outlet property="emptyLabel" destination="l0M-7m-ZQv" id="Ym7-OS-Gy9"/>
                         <outlet property="goingButton" destination="RS2-nZ-jt2" id="PMM-Sc-XwU"/>
                         <outlet property="imageView" destination="KoV-Aj-pRp" id="Ipf-rE-2lA"/>
                         <outlet property="imeAkcijeLabel" destination="smg-UG-Upv" id="1xV-n2-uaU"/>
@@ -1208,13 +1230,13 @@
     </scenes>
     <resources>
         <image name="Close" width="36" height="36"/>
-        <image name="Home" width="36" height="36"/>
         <image name="Nature" width="960" height="540"/>
         <image name="Person" width="262" height="175"/>
         <image name="PersonIcon" width="36" height="36"/>
         <image name="Rang" width="36" height="36"/>
-        <image name="Search" width="36" height="36"/>
+        <image name="news" width="25" height="25"/>
         <image name="notDone" width="125" height="125"/>
         <image name="social" width="1200" height="630"/>
+        <image name="volunteer" width="25" height="25"/>
     </resources>
 </document>
