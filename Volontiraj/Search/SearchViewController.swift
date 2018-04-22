@@ -113,6 +113,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         filteredAkcije = nearbyAkcije
+        akcijeUBliziniLabel.text = "Akcije u blizini"
         collectionView.reloadData()
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.resignFirstResponder()
@@ -125,10 +126,12 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count == 0 {
             filteredAkcije = nearbyAkcije
+            akcijeUBliziniLabel.text = "Akcije u blizini"
         } else {
             filteredAkcije = akcije.filter({ (akcija) -> Bool in
                 akcija.ime.lowercased().contains(searchText.lowercased())
             })
+            akcijeUBliziniLabel.text = "Rezultati"
         }
         collectionView.reloadData()
     }

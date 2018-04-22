@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyCollectionLabel: UILabel!
     
-    
+    var spinnerView: UIView?
     var akcije: [Akcija] = []
     var newsFeed: [NewsFeed] = []
     
@@ -53,6 +53,7 @@ class HomeViewController: UIViewController {
         
         akcije = []
         collectionView.reloadData()
+//        let spinner = UIViewController.displaySpinner(onView: self.view)
         table.read(with: NSPredicate(format: "UserID == %@", currentUser.id)) { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -66,6 +67,7 @@ class HomeViewController: UIViewController {
                     })
                 }
             }
+//            UIViewController.removeSpinner(spinner: spinner)
         }
     }
     
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController {
         
         newsFeed = []
         tableView.reloadData()
+        spinnerView = UIViewController.displaySpinner(onView: self.view)
         followsTable.read(with: NSPredicate(format: "UserID == %@", currentUser.id)) { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -121,6 +124,7 @@ class HomeViewController: UIViewController {
             newsFeed.append(NewsFeed(user: user, akcija: akcija, vrijeme: vrijeme, type: type))
             self.newsFeed.sort(by: { $0.vrijeme > $1.vrijeme })
             self.tableView.reloadData()
+            UIViewController.removeSpinner(spinner: spinnerView!)
         }
     }
 

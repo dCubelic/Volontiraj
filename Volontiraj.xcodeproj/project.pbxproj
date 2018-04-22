@@ -38,6 +38,7 @@
 		B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B9208BE8A500FF9261 /* NewsFeed.swift */; };
 		B41512BF208C2BD200FF9261 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512BE208C2BD200FF9261 /* RegisterViewController.swift */; };
 		B41512C1208C39D500FF9261 /* NovaAkcijaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */; };
+		B41512C3208C6C5F00FF9261 /* UIViewController+V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512C2208C6C5F00FF9261 /* UIViewController+V.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		B41512B9208BE8A500FF9261 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		B41512BE208C2BD200FF9261 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaAkcijaViewController.swift; sourceTree = "<group>"; };
+		B41512C2208C6C5F00FF9261 /* UIViewController+V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+V.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +127,10 @@
 				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
-				B41512BD208C21E300FF9261 /* Login */,
 				B41512BC208C1CEE00FF9261 /* Models */,
-				B41512A4208B8ACB00FF9261 /* Home */,
+				B41512BD208C21E300FF9261 /* Login */,
 				B41512A7208B9FE800FF9261 /* Search */,
+				B41512A4208B8ACB00FF9261 /* Home */,
 				B41512AE208BB92700FF9261 /* Rang Lista */,
 				B41512BB208C1CE000FF9261 /* Profil */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
@@ -164,6 +166,7 @@
 				B4151294208B7A2100FF9261 /* UIStoryboard+V.swift */,
 				B4151296208B7A3000FF9261 /* UITableView+V.swift */,
 				B4151298208B7A3C00FF9261 /* UICollectionView+V.swift */,
+				B41512C2208C6C5F00FF9261 /* UIViewController+V.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				B41512A6208B95ED00FF9261 /* SearchViewController.swift in Sources */,
 				B41512AC208BA39C00FF9261 /* RangListTableViewCell.swift in Sources */,
 				B41512A9208BA38D00FF9261 /* RangListViewController.swift in Sources */,
+				B41512C3208C6C5F00FF9261 /* UIViewController+V.swift in Sources */,
 				B41512BF208C2BD200FF9261 /* RegisterViewController.swift in Sources */,
 				B4151295208B7A2100FF9261 /* UIStoryboard+V.swift in Sources */,
 				B41512B6208BC62400FF9261 /* Akcija.swift in Sources */,

@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         
         guard let username = usernameTextField.text?.lowercased(), let pass = passwordTextField.text else { return }
         
+        let spinner = UIViewController.displaySpinner(onView: self.view)
         table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", username, "\(pass.hash)")) { (result, error) in
             if let items = result?.items {
                 if items.count == 1 {
@@ -44,8 +45,13 @@ class LoginViewController: UIViewController {
                     
                     self.usernameTextField.text = ""
                     self.passwordTextField.text = ""
+                } else {
+                    let alert = UIAlertController(title: "Greška", message: "Ne postoji korisnik s unesenim podacima", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
+            UIViewController.removeSpinner(spinner: spinner)
         }
     }
 }
