@@ -59,7 +59,7 @@ class RegisterViewController: UIViewController {
         
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            guard let ime = imeTextField.text, let prezime = secondTextField.text, let email = emailTextField.text?.lowercased(), let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            guard let ime = imeTextField.text, let prezime = secondTextField.text, let email = emailTextField.text?.lowercased(), let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text, password == repeatPassword else { return }
             
             let newItem: [String: Any] = [
                 "Ime": ime,
@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
                 
             })
         case 1:
-            guard let ime = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            guard let ime = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text, password == repeatPassword else { return }
             
             let newItem: [String: Any] = [
                 "Ime": ime,
@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController {
                 
             })
         case 2:
-            guard let ime = imeTextField.text, let brojVolontera = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            guard let ime = imeTextField.text, let brojVolontera = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text, password == repeatPassword else { return }
             
             let newItem: [String: Any] = [
                 "Ime": ime,
