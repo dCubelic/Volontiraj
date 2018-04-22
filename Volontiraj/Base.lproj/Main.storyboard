@@ -879,6 +879,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="g1O-dC-Wc9" id="9kQ-QR-aXb"/>
                         <outlet property="dateLabel" destination="sbn-eD-X9U" id="zvi-GL-kwe"/>
                         <outlet property="descriptionLabel" destination="UvX-lK-t5j" id="NC9-IM-bbE"/>
                         <outlet property="goingButton" destination="RS2-nZ-jt2" id="PMM-Sc-XwU"/>

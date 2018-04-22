@@ -40,6 +40,7 @@ class RangListViewController: UIViewController {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "Users")
         
+        users = []
         table.read { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -91,8 +92,14 @@ extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: ProfilePopupViewController.self)
+        if let currentUser = User.currentUser {
+            if currentUser.id == users[indexPath.row].id {
+                return
+            }
+        }
         
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: ProfilePopupViewController.self)
+        vc.user = users[indexPath.row]
         vc.modalPresentationStyle = .overCurrentContext
         
         present(vc, animated: false, completion: nil)

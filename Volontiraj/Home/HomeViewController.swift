@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
+    
     var akcije: [Akcija] = []
     var newsFeed: [NewsFeed] = []
     
@@ -30,16 +31,20 @@ class HomeViewController: UIViewController {
         
         collectionView.register(UINib(nibName: "AkcijaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AkcijaCollectionViewCell")
         tableView.register(UINib(nibName: "StatusTableViewCell", bundle: nil), forCellReuseIdentifier: "StatusTableViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAkcije), name: Notification.Name("promjenaAkcije"), object: nil)
     }
     
     
     
-    private func loadAkcije() {
+    @objc private func loadAkcije() {
         guard let currentUser = User.currentUser else { return }
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "UserAkcije")
         let akcijeTable = client.table(withName: "Akcije")
         
+        akcije = []
+        collectionView.reloadData()
         table.read(with: NSPredicate(format: "UserID == %@", currentUser.id)) { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -131,6 +136,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
+        vc.akcija = akcije[indexPath.row]
         
         present(vc, animated: true, completion: nil)
     }
@@ -153,6 +159,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
+        vc.akcija = newsFeed[indexPath.row].akcija
         
         present(vc, animated: true, completion: nil)
     }

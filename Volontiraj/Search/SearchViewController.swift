@@ -25,11 +25,10 @@ class SearchViewController: UIViewController {
         loadSveAkcije()
         
         searchBar.backgroundImage = UIImage()
-        searchBar.keyboardAppearance = .dark
         searchBar.delegate = self
         
         if let searchTextField: UITextField = searchBar.value(forKey: "searchField") as? UITextField {
-            searchTextField.backgroundColor = UIColor.lightGray
+            searchTextField.backgroundColor = UIColor(white: 240/255, alpha: 1)
         }
         
         collectionView.register(UINib(nibName: "AkcijaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AkcijaCollectionViewCell")
@@ -93,6 +92,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
+        vc.akcija = akcije[indexPath.row]
         
         present(vc, animated: true, completion: nil)
     }

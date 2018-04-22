@@ -14,8 +14,14 @@ class ProfilePopupViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var popupView: UIView!
     
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let user = user else { return }
+        
+        nameLabel.text = "\(user.ime) \(user.prezime)"
         
         popupView.layer.cornerRadius = 20
         popupView.layer.masksToBounds = true

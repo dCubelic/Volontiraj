@@ -18,4 +18,8 @@ class GoingPeopleCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = imageView.frame.width / 2
         imageView.layer.masksToBounds = true
     }
+    
+    func setup(with user: User) {
+        nameLabel.text = "\(user.ime) \(user.prezime)"
+    }
 }
