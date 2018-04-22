@@ -21,5 +21,6 @@ class GoingPeopleCollectionViewCell: UICollectionViewCell {
     
     func setup(with user: User) {
         nameLabel.text = "\(user.ime) \(user.prezime)"
+//        imageView.image = UIImage(named: user.ime)
     }
 }

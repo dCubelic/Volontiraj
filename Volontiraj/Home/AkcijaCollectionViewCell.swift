@@ -30,6 +30,7 @@ class AkcijaCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(with akcija: Akcija) {
+//        imageViewLabel.image = UIImage(named: akcija.ime)
         imeAkcijeLabel.text = akcija.ime
         numberOfPeopleLabel.text = "\(akcija.brojLjudi)/\(akcija.potrebnoLjudi)"
         dateLabel.text = dateFormatter.string(from: akcija.vrijeme)

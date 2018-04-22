@@ -36,6 +36,7 @@
 		B41512B4208BC26A00FF9261 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B3208BC26A00FF9261 /* User.swift */; };
 		B41512B6208BC62400FF9261 /* Akcija.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B5208BC62400FF9261 /* Akcija.swift */; };
 		B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B9208BE8A500FF9261 /* NewsFeed.swift */; };
+		B41512BF208C2BD200FF9261 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512BE208C2BD200FF9261 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		B41512B3208BC26A00FF9261 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B41512B5208BC62400FF9261 /* Akcija.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Akcija.swift; sourceTree = "<group>"; };
 		B41512B9208BE8A500FF9261 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
+		B41512BE208C2BD200FF9261 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
+				B41512BE208C2BD200FF9261 /* RegisterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				B41512A6208B95ED00FF9261 /* SearchViewController.swift in Sources */,
 				B41512AC208BA39C00FF9261 /* RangListTableViewCell.swift in Sources */,
 				B41512A9208BA38D00FF9261 /* RangListViewController.swift in Sources */,
+				B41512BF208C2BD200FF9261 /* RegisterViewController.swift in Sources */,
 				B4151295208B7A2100FF9261 /* UIStoryboard+V.swift in Sources */,
 				B41512B6208BC62400FF9261 /* Akcija.swift in Sources */,
 				B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */,
