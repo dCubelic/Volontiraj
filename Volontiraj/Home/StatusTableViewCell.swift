@@ -35,6 +35,6 @@ class StatusTableViewCell: UITableViewCell {
             statusLabel.text = "\(newsFeed.user.ime) pridruzio se akciji: \(newsFeed.akcija.ime)"
         }
         dateLabel.text = dateFormatter.string(from: newsFeed.vrijeme)
-        personImageView.image = UIImage(named: newsFeed.user.ime) ?? #imageLiteral(resourceName: "Person")
+        personImageView.image = UIImage(named: newsFeed.user.ime) ?? ((newsFeed.user.type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
     }
 }

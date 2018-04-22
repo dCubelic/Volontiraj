@@ -24,7 +24,7 @@ class RangListTableViewCell: UITableViewCell {
     func setup(with user: User) {
         imeLabel.text = "\(user.ime) \(user.prezime)"
         brojSatiLabel.text = "\(user.satiVolontiranja)"
-        personImageView.image = UIImage(named: user.ime) ?? #imageLiteral(resourceName: "Person")
+        personImageView.image = UIImage(named: user.ime) ?? ((user.type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
     }
     
 }

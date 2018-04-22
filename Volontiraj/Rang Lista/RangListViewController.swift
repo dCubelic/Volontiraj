@@ -94,7 +94,7 @@ class RangListViewController: UIViewController {
 extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if filteredUsers.count > 0 {
-            volonterMjesecaImageView.image = UIImage(named: filteredUsers[0].ime) ?? #imageLiteral(resourceName: "Person")
+            volonterMjesecaImageView.image = UIImage(named: filteredUsers[0].ime) ?? ((filteredUsers[0].type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
             volonterMjesecaLabel.text = "\(filteredUsers[0].ime) \(filteredUsers[0].prezime)"
             volonterMjesecaBrojSatiLabel.text = "\(filteredUsers[0].satiVolontiranja) sati"
         }

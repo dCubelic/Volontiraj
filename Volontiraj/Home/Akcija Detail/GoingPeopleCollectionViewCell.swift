@@ -21,6 +21,6 @@ class GoingPeopleCollectionViewCell: UICollectionViewCell {
     
     func setup(with user: User) {
         nameLabel.text = "\(user.ime) \(user.prezime)"
-        imageView.image = UIImage(named: user.ime) ?? #imageLiteral(resourceName: "Person")
+        imageView.image = UIImage(named: user.ime) ?? ((user.type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
     }
 }

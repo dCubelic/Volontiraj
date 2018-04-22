@@ -24,7 +24,7 @@ class ProfilePopupViewController: UIViewController {
         
         guard let user = user else { return }
         
-        personImageView.image = UIImage(named: user.ime) ?? #imageLiteral(resourceName: "Person")
+        personImageView.image = UIImage(named: user.ime) ?? ((user.type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
         
         personImageView.layer.cornerRadius = personImageView.frame.height / 2
         personImageView.layer.masksToBounds = true

@@ -25,7 +25,7 @@ class ProfilViewController: UIViewController {
         
         guard let currentUser = User.currentUser else { return }
         
-        personImageView.image = UIImage(named: currentUser.ime) ?? #imageLiteral(resourceName: "Person")
+        personImageView.image = UIImage(named: currentUser.ime) ?? ((currentUser.type == .pojedinac) ? #imageLiteral(resourceName: "Person") : #imageLiteral(resourceName: "defaultCompany"))
         personNameLabel.text = "\(currentUser.ime) \(currentUser.prezime)"
         brojSatiLabel.text = "\(currentUser.satiVolontiranja)"
         
