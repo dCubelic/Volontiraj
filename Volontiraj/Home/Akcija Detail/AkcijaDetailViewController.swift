@@ -34,7 +34,7 @@ class AkcijaDetailViewController: UIViewController {
 
         guard let akcija = akcija else { return }
         
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             self.loadUsers()
         }
         
@@ -68,6 +68,7 @@ class AkcijaDetailViewController: UIViewController {
                                 self.goingButton.alpha = 0.7
                             }
                             self.users.append(user)
+                            self.numberOfPeopleLabel.text = "\(self.users.count)/\(akcija.potrebnoLjudi)"
                             self.collectionView.reloadData()
                         }
                     })
@@ -105,7 +106,7 @@ class AkcijaDetailViewController: UIViewController {
         
         table.read(with: NSPredicate(format: "UserID == %@ and AkcijaID == %@", currentUser.id, akcija.id)) { (result, error) in
             let id = result?.items![0]["id"]
-            table.delete(withId: id, completion: { (id, error) in
+            table.delete(withId: id ?? "", completion: { (id, error) in
                 NotificationCenter.default.post(name: Notification.Name("promjenaAkcije"), object: nil)
             })
             
@@ -115,6 +116,7 @@ class AkcijaDetailViewController: UIViewController {
     private func addUserToAkcija() {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "UserAkcije")
+        let newsFeedTable = client.table(withName: "NewsFeed")
         
         guard let currentUser = User.currentUser, let akcija = akcija else { return }
         
@@ -124,6 +126,16 @@ class AkcijaDetailViewController: UIViewController {
         ]
         table.insert(newItem) { (dict, error) in
             NotificationCenter.default.post(name: Notification.Name("promjenaAkcije"), object: nil)
+        }
+        
+        let newFeedItem: [String: Any] = [
+            "UserID": currentUser.id,
+            "AkcijaID": akcija.id,
+            "Vrijeme": Date(),
+            "Type": 0
+        ]
+        newsFeedTable.insert(newFeedItem) { (dict, error) in
+            NotificationCenter.default.post(name: Notification.Name("noviStatus"), object: nil)
         }
     }
     

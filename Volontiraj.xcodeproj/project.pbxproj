@@ -35,7 +35,6 @@
 		B41512B2208BBED000FF9261 /* ProfilePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */; };
 		B41512B4208BC26A00FF9261 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B3208BC26A00FF9261 /* User.swift */; };
 		B41512B6208BC62400FF9261 /* Akcija.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B5208BC62400FF9261 /* Akcija.swift */; };
-		B41512B8208BCE2800FF9261 /* UserAkcije.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B7208BCE2800FF9261 /* UserAkcije.swift */; };
 		B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B9208BE8A500FF9261 /* NewsFeed.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopupViewController.swift; sourceTree = "<group>"; };
 		B41512B3208BC26A00FF9261 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B41512B5208BC62400FF9261 /* Akcija.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Akcija.swift; sourceTree = "<group>"; };
-		B41512B7208BCE2800FF9261 /* UserAkcije.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAkcije.swift; sourceTree = "<group>"; };
 		B41512B9208BE8A500FF9261 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,16 +121,12 @@
 				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
 				A2D9CBC31943C2540017F096 /* AppDelegate.swift */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
-				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
-				B41512B3208BC26A00FF9261 /* User.swift */,
-				B41512B5208BC62400FF9261 /* Akcija.swift */,
-				B41512B9208BE8A500FF9261 /* NewsFeed.swift */,
-				B41512B7208BCE2800FF9261 /* UserAkcije.swift */,
-				B41512AF208BB94400FF9261 /* ProfilViewController.swift */,
-				B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */,
+				B41512BD208C21E300FF9261 /* Login */,
+				B41512BC208C1CEE00FF9261 /* Models */,
 				B41512A4208B8ACB00FF9261 /* Home */,
 				B41512A7208B9FE800FF9261 /* Search */,
 				B41512AE208BB92700FF9261 /* Rang Lista */,
+				B41512BB208C1CE000FF9261 /* Profil */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
 				B415129A208B7A4600FF9261 /* Extensions */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
@@ -208,6 +202,33 @@
 				B41512AB208BA39C00FF9261 /* RangListTableViewCell.xib */,
 			);
 			path = "Rang Lista";
+			sourceTree = "<group>";
+		};
+		B41512BB208C1CE000FF9261 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				B41512AF208BB94400FF9261 /* ProfilViewController.swift */,
+				B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */,
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
+		B41512BC208C1CEE00FF9261 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B41512B3208BC26A00FF9261 /* User.swift */,
+				B41512B5208BC62400FF9261 /* Akcija.swift */,
+				B41512B9208BE8A500FF9261 /* NewsFeed.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B41512BD208C21E300FF9261 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B415128C208B70EF00FF9261 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +312,6 @@
 				B4151299208B7A3C00FF9261 /* UICollectionView+V.swift in Sources */,
 				B415128D208B70EF00FF9261 /* LoginViewController.swift in Sources */,
 				B415129C208B818900FF9261 /* AkcijaDetailViewController.swift in Sources */,
-				B41512B8208BCE2800FF9261 /* UserAkcije.swift in Sources */,
 				B415129E208B876300FF9261 /* GoingPeopleCollectionViewCell.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
 				B41512B0208BB94400FF9261 /* ProfilViewController.swift in Sources */,

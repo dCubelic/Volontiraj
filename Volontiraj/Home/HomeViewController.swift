@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "StatusTableViewCell", bundle: nil), forCellReuseIdentifier: "StatusTableViewCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadAkcije), name: Notification.Name("promjenaAkcije"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadNewsFeed), name: Notification.Name("noviStatus"), object: nil)
     }
     
     
@@ -49,9 +50,10 @@ class HomeViewController: UIViewController {
             if let items = result?.items {
                 for item in items {
                     let akcijaId = item["AkcijaID"]
-                    akcijeTable.read(withId: akcijaId, completion: { (akcijaDict, error) in
-                        if let akcijaDict = akcijaDict, let akcija = Akcija(with: akcijaDict) {
+                    akcijeTable.read(withId: akcijaId ?? "", completion: { (akcijaDict, error) in
+                        if let akcijaDict = akcijaDict, let akcija = Akcija(with: akcijaDict), akcija.vrijeme > Date() {
                             self.akcije.append(akcija)
+                            self.akcije.sort(by: { $0.vrijeme < $1.vrijeme } )
                             self.collectionView.reloadData()
                         }
                     })
@@ -60,13 +62,14 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func loadNewsFeed() {
+    @objc private func loadNewsFeed() {
         guard let currentUser = User.currentUser else { return }
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let followsTable = client.table(withName: "FollowsTable")
         let newsFeedTable = client.table(withName: "NewsFeed")
         
-        
+        newsFeed = []
+        tableView.reloadData()
         followsTable.read(with: NSPredicate(format: "UserID == %@", currentUser.id)) { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -87,8 +90,7 @@ class HomeViewController: UIViewController {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let userTable = client.table(withName: "Users")
         
-        
-        userTable.read(withId: item["UserID"]) { (dict, error) in
+        userTable.read(withId: item["UserID"] ?? "") { (dict, error) in
             if let dict = dict, let user = User(with: dict) {
                 self.loadAkcija(user: user, item: item)
             }
@@ -99,7 +101,7 @@ class HomeViewController: UIViewController {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let akcijeTable = client.table(withName: "Akcije")
         
-        akcijeTable.read(withId: item["AkcijaID"]) { (dict, error) in
+        akcijeTable.read(withId: item["AkcijaID"] ?? "") { (dict, error) in
             if let dict = dict, let akcija = Akcija(with: dict) {
                 self.loadFeed(user: user, akcija: akcija, item: item)
             }
@@ -110,6 +112,7 @@ class HomeViewController: UIViewController {
         if let vrijeme = item["vrijeme"] as? Date,
             let type = item["type"] as? Int {
             newsFeed.append(NewsFeed(user: user, akcija: akcija, vrijeme: vrijeme, type: type))
+            self.newsFeed.sort(by: { $0.vrijeme > $1.vrijeme })
             self.tableView.reloadData()
         }
     }

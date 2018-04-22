@@ -47,7 +47,7 @@ class ProfilViewController: UIViewController {
             if let items = result?.items {
                 for item in items {
                     let akcijaId = item["AkcijaID"]
-                    akcijeTable.read(withId: akcijaId, completion: { (akcijaDict, error) in
+                    akcijeTable.read(withId: akcijaId ?? "", completion: { (akcijaDict, error) in
                         if let akcijaDict = akcijaDict, let akcija = Akcija(with: akcijaDict) {
                             self.akcije.append(akcija)
                             self.collectionView.reloadData()
