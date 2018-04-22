@@ -42,6 +42,17 @@ class NovaAkcijaViewController: UIViewController {
             "Opis_akcije": opis,
         ]
         table.insert(newItem) { (dict, error) in
+            
+            let newsFeedTable = client.table(withName: "NewsFeed")
+            let newsItem: [String: Any] = [
+                "UserID": currentUser.id,
+                "AkcijaID": dict?["ID"] ?? "",
+                "vrijeme": Date(),
+                "type": 1
+            ]
+            newsFeedTable.insert(newsItem, completion: { (dict2, error2) in
+                NotificationCenter.default.post(name: Notification.Name("noviStatus"), object: nil)
+            })
             NotificationCenter.default.post(name: Notification.Name("novaAkcija"), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
