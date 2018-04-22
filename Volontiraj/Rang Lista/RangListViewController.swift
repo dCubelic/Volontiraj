@@ -21,6 +21,7 @@ class RangListViewController: UIViewController {
     @IBOutlet weak var trenutniMjesecLabel: UILabel!
     
     var users: [User] = []
+    var filteredUsers: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,50 +42,70 @@ class RangListViewController: UIViewController {
         let table = client.table(withName: "Users")
         
         users = []
+        tableView.reloadData()
         table.read { (result, error) in
             if let items = result?.items {
                 for item in items {
                     if let user = User(with: item) {
                         self.users.append(user)
                         self.users.sort { $0.satiVolontiranja > $1.satiVolontiranja }
-                        self.tableView.reloadData()
+                        
                     }
                 }
             }
+            
+            self.filteredUsers = self.users.filter({ (user) -> Bool in
+                user.type == UserType.pojedinac
+            })
+            self.tableView.reloadData()
         }
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            setupUIPojedinci()
+            filteredUsers = users.filter({ (user) -> Bool in
+                user.type == UserType.pojedinac
+            })
+            tableView.reloadData()
+//            setupUIPojedinci()
         case 1:
-            setupUITvrtke()
+            filteredUsers = users.filter({ (user) -> Bool in
+                user.type != UserType.pojedinac
+            })
+            tableView.reloadData()
+//            setupUITvrtke()
         default:
             break
         }
     }
     
-    private func setupUIPojedinci() {
-        volonterMjesecaImageView.image = #imageLiteral(resourceName: "Person")
-        volonterMjesecaLabel.text = "Filip Grebenac"
-    }
-    
-    private func setupUITvrtke() {
-        volonterMjesecaImageView.image = #imageLiteral(resourceName: "Tvrtka")
-        volonterMjesecaLabel.text = "Microsoft"
-    }
+//    private func setupUIPojedinci() {
+//        volonterMjesecaImageView.image = UIImage(named: fil)
+//        volonterMjesecaLabel.text = "Filip Grebenac"
+//    }
+//
+//    private func setupUITvrtke() {
+//        volonterMjesecaImageView.image = #imageLiteral(resourceName: "Tvrtka")
+//        volonterMjesecaLabel.text = "Microsoft"
+//    }
 }
 
 extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        if filteredUsers.count > 0 {
+            volonterMjesecaImageView.image = UIImage(named: filteredUsers[0].ime)
+            volonterMjesecaLabel.text = "\(filteredUsers[0].ime) \(filteredUsers[0].prezime)"
+            volonterMjesecaBrojSatiLabel.text = "\(filteredUsers[0].satiVolontiranja)"
+        }
+
+        return filteredUsers.count - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: RangListTableViewCell.self, for: indexPath)
         
-        cell.setup(with: users[indexPath.row])
+        cell.setup(with: filteredUsers[indexPath.row + 1])
         
         return cell
     }
@@ -93,13 +114,13 @@ extension RangListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if let currentUser = User.currentUser {
-            if currentUser.id == users[indexPath.row].id {
+            if currentUser.id == filteredUsers[indexPath.row + 1].id {
                 return
             }
         }
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: ProfilePopupViewController.self)
-        vc.user = users[indexPath.row]
+        vc.user = filteredUsers[indexPath.row + 1]
         vc.modalPresentationStyle = .overCurrentContext
         
         present(vc, animated: false, completion: nil)

@@ -356,11 +356,11 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GFv-8e-NJW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volonter travnja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-iA-ouX">
-                                            <rect key="frame" x="93" y="16" width="187.5" height="33.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volonter mjeseca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSL-iA-ouX">
+                                            <rect key="frame" x="84" y="16" width="207" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -400,21 +400,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="V5R-Db-huO" secondAttribute="bottom" constant="8" id="uKw-dC-a7Q"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Svibanj" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-zv-8TR">
-                                            <rect key="frame" x="16" y="217.5" width="76.5" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="uXg-Xo-12M" firstAttribute="top" secondItem="nSL-iA-ouX" secondAttribute="bottom" constant="8" id="Aft-Q9-4uD"/>
                                         <constraint firstItem="uXg-Xo-12M" firstAttribute="centerX" secondItem="GFv-8e-NJW" secondAttribute="centerX" id="gks-hg-sFw"/>
-                                        <constraint firstItem="tIV-zv-8TR" firstAttribute="leading" secondItem="GFv-8e-NJW" secondAttribute="leading" constant="16" id="jmE-s6-pV4"/>
                                         <constraint firstItem="nSL-iA-ouX" firstAttribute="centerX" secondItem="GFv-8e-NJW" secondAttribute="centerX" id="tUl-YI-XBz"/>
                                         <constraint firstItem="nSL-iA-ouX" firstAttribute="top" secondItem="GFv-8e-NJW" secondAttribute="top" constant="16" id="vfW-Fq-1Yl"/>
-                                        <constraint firstItem="tIV-zv-8TR" firstAttribute="top" secondItem="uXg-Xo-12M" secondAttribute="bottom" constant="8" id="wiC-xi-fAh"/>
                                     </constraints>
                                 </view>
                                 <connections>
@@ -457,7 +449,6 @@
                     <connections>
                         <outlet property="segmentControl" destination="sK5-V0-ljm" id="03B-TP-lok"/>
                         <outlet property="tableView" destination="Pfm-uA-ahN" id="C8O-EL-vKz"/>
-                        <outlet property="trenutniMjesecLabel" destination="tIV-zv-8TR" id="0Uf-Ci-qLy"/>
                         <outlet property="volonterMjesecLabel" destination="nSL-iA-ouX" id="mEZ-dr-47T"/>
                         <outlet property="volonterMjesecaBrojSatiLabel" destination="V5R-Db-huO" id="eWe-04-UAO"/>
                         <outlet property="volonterMjesecaImageView" destination="2Wl-cP-DS1" id="9wz-XU-ty5"/>
@@ -724,13 +715,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-OP-L0i">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Opis akcije" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-OP-L0i">
                                 <rect key="frame" x="32" y="210" width="311" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6ya-w3-hhv"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
