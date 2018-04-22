@@ -20,7 +20,15 @@ class NovaAkcijaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+//        tapGesture.cancelsTouchesInView
+        view.addGestureRecognizer(tapGesture)
+        
         datePicker.minimumDate = Date()
+    }
+    
+    @objc func tapAction() {
+        view.endEditing(true)
     }
 
     @IBAction func datePickerChanged(_ sender: Any) {

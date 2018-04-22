@@ -92,6 +92,9 @@ class HomeViewController: UIViewController {
                         }
                     })
                 }
+                if items.count == 0 {
+                    UIViewController.removeSpinner(spinner: self.spinnerView!)
+                }
             }
         }
     }
@@ -124,8 +127,8 @@ class HomeViewController: UIViewController {
             newsFeed.append(NewsFeed(user: user, akcija: akcija, vrijeme: vrijeme, type: type))
             self.newsFeed.sort(by: { $0.vrijeme > $1.vrijeme })
             self.tableView.reloadData()
-            UIViewController.removeSpinner(spinner: spinnerView!)
         }
+        UIViewController.removeSpinner(spinner: spinnerView!)
     }
 
     @IBAction func novaAkcijaAction(_ sender: Any) {

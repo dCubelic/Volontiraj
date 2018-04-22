@@ -176,6 +176,7 @@
 			children = (
 				B415129B208B818900FF9261 /* AkcijaDetailViewController.swift */,
 				B415129D208B876300FF9261 /* GoingPeopleCollectionViewCell.swift */,
+				B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */,
 			);
 			path = "Akcija Detail";
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 			children = (
 				B41512AF208BB94400FF9261 /* ProfilViewController.swift */,
 				B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */,
-				B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";

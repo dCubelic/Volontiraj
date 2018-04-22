@@ -764,7 +764,6 @@
                                     <color key="titleColor" red="0.1273502111" green="0.4403663874" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="dodajAction:" destination="7sG-Kq-1MO" eventType="touchUpInside" id="6E8-bx-UVk"/>
                                     <action selector="odustaniAction:" destination="7sG-Kq-1MO" eventType="touchUpInside" id="Nwo-8n-Njl"/>
                                 </connections>
                             </button>
