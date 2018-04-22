@@ -22,8 +22,15 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nature" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-X6-CnK">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="196"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Akcija skupljanja smeca" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-sY-tIS">
+                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qj-7O-fOm">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="196"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Akcija skupljanja smeca" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-sY-tIS">
                         <rect key="frame" x="8" y="10" width="184" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="OVS-H2-LoO"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -49,6 +56,7 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="7Qj-7O-fOm" secondAttribute="trailing" id="1ss-n8-rbF"/>
                 <constraint firstItem="oE9-sY-tIS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="9bu-oJ-qO5"/>
                 <constraint firstAttribute="trailing" secondItem="oE9-sY-tIS" secondAttribute="trailing" constant="8" id="ADY-cF-jNu"/>
                 <constraint firstItem="iVm-X6-CnK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ioe-RC-Cre"/>
@@ -57,10 +65,13 @@
                 <constraint firstAttribute="bottom" secondItem="iVm-X6-CnK" secondAttribute="bottom" id="QF7-Ex-fNm"/>
                 <constraint firstItem="oE9-sY-tIS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="RLX-Tn-Dp9"/>
                 <constraint firstAttribute="trailing" secondItem="iVm-X6-CnK" secondAttribute="trailing" id="VQ2-mi-6ZS"/>
+                <constraint firstItem="7Qj-7O-fOm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZAL-xY-5Wd"/>
                 <constraint firstItem="QB3-Rn-Lzg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bAX-is-AmH"/>
                 <constraint firstItem="iVm-X6-CnK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dvr-sI-g0L"/>
                 <constraint firstItem="lYN-bU-1FD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gkw-UP-F7M"/>
                 <constraint firstAttribute="bottom" secondItem="wMT-Ss-Ph0" secondAttribute="bottom" constant="8" id="kBA-wA-302"/>
+                <constraint firstAttribute="bottom" secondItem="7Qj-7O-fOm" secondAttribute="bottom" id="mCd-GI-UMI"/>
+                <constraint firstItem="7Qj-7O-fOm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="meY-av-YD5"/>
                 <constraint firstItem="QB3-Rn-Lzg" firstAttribute="top" secondItem="oE9-sY-tIS" secondAttribute="bottom" id="xbl-nE-uzw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -76,6 +87,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Nature" width="1920" height="1080"/>
+        <image name="Nature" width="960" height="540"/>
     </resources>
 </document>

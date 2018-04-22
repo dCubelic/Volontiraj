@@ -12,6 +12,9 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var novaAkcijaButton: UIButton!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyCollectionLabel: UILabel!
     
     
     var akcije: [Akcija] = []
@@ -19,9 +22,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let user = User.currentUser {
-            print(user.id)
+        
+        guard let currentUser = User.currentUser else { return }
+        
+        if currentUser.type == .organizacija {
+            novaAkcijaButton.isHidden = false
+        } else {
+            novaAkcijaButton.isHidden = true
         }
         
         DispatchQueue.main.async {
@@ -117,6 +124,12 @@ class HomeViewController: UIViewController {
         }
     }
 
+    @IBAction func novaAkcijaAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: NovaAkcijaViewController.self)
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -126,6 +139,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if akcije.count == 0 {
+            emptyCollectionLabel.isHidden = false
+            collectionView.isHidden = true
+        } else {
+            emptyCollectionLabel.isHidden = true
+            collectionView.isHidden = false
+        }
         return akcije.count
     }
     
@@ -147,6 +167,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if newsFeed.count == 0 {
+            emptyLabel.isHidden = false
+            tableView.isHidden = true
+        } else {
+            emptyLabel.isHidden = true
+            tableView.isHidden = false
+        }
         return newsFeed.count
     }
     

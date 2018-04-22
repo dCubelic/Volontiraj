@@ -16,6 +16,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
         navigationController?.navigationBar.tintColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -32,16 +35,29 @@ class LoginViewController: UIViewController {
         
         guard let username = usernameTextField.text, let pass = passwordTextField.text else { return }
         
-        table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", username, pass)) { (result, error) in
+        table.read(with: NSPredicate(format: "Mail == %@ and Password == %@", username, "\(pass.hash)")) { (result, error) in
             if let items = result?.items {
                 if items.count == 1 {
                     User.currentUser = User(with: items[0])
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
                     self.present(vc, animated: true, completion: nil)
-                } else {
-//                    print("los count")
+                    
+                    self.usernameTextField.text = ""
+                    self.passwordTextField.text = ""
                 }
             }
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
 }

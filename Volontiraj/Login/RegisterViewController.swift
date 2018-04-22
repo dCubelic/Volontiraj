@@ -54,15 +54,48 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
+        let table = client.table(withName: "Users")
+        
         switch segmentControl.selectedSegmentIndex {
         case 0:
             guard let ime = imeTextField.text, let prezime = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
             
-            
+            let newItem: [String: Any] = [
+                "Ime": ime,
+                "Prezime": prezime,
+                "mail": email,
+                "password": "\(password.hash)",
+                "type": "pojedinac"
+            ]
+            table.insert(newItem, completion: { (dict, error) in
+                
+            })
         case 1:
             guard let ime = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            
+            let newItem: [String: Any] = [
+                "Ime": ime,
+                "mail": email,
+                "password": "\(password.hash)",
+                "type": "organizacija"
+            ]
+            table.insert(newItem, completion: { (dict, error) in
+                
+            })
         case 2:
             guard let ime = imeTextField.text, let brojVolontera = secondTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let repeatPassword = repeatPasswordTextField.text else { return }
+            
+            let newItem: [String: Any] = [
+                "Ime": ime,
+                "brojVolonteraTvrtke": brojVolontera,
+                "mail": email,
+                "password": "\(password.hash)",
+                "type": "tvrtka"
+            ]
+            table.insert(newItem, completion: { (dict, error) in
+                
+            })
         default:
             return
         }

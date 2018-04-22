@@ -38,6 +38,7 @@ class AkcijaDetailViewController: UIViewController {
             self.loadUsers()
         }
         
+        imageView.image = UIImage(named: akcija.ime) ?? #imageLiteral(resourceName: "default")
         imeAkcijeLabel.text = akcija.ime
         imeOrganizacijeLabel.text = akcija.organizator
         numberOfPeopleLabel.text = "\(akcija.brojLjudi)/\(akcija.potrebnoLjudi)"

@@ -32,9 +32,11 @@ class SearchViewController: UIViewController {
         }
         
         collectionView.register(UINib(nibName: "AkcijaCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AkcijaCollectionViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadNearbyAkcije), name: Notification.Name("novaAkcija"), object: nil)
     }
     
-    private func loadSveAkcije() {
+    @objc private func loadSveAkcije() {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "Akcije")
         
@@ -50,10 +52,12 @@ class SearchViewController: UIViewController {
         
     }
     
-    private func loadNearbyAkcije() {
+    @objc private func loadNearbyAkcije() {
         let client = MSClient(applicationURLString: "https://volontiraj.azurewebsites.net")
         let table = client.table(withName: "Akcije")
         
+        nearbyAkcije = []
+        collectionView.reloadData()
         table.read { (result, error) in
             if let items = result?.items {
                 for item in items {
@@ -92,7 +96,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: AkcijaDetailViewController.self)
-        vc.akcija = akcije[indexPath.row]
+        vc.akcija = filteredAkcije[indexPath.row]
         
         present(vc, animated: true, completion: nil)
     }

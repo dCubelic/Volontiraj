@@ -24,6 +24,8 @@ class ProfilePopupViewController: UIViewController {
         
         guard let user = user else { return }
         
+        personImageView.image = UIImage(named: user.ime) ?? #imageLiteral(resourceName: "Person")
+        
         personImageView.layer.cornerRadius = personImageView.frame.height / 2
         personImageView.layer.masksToBounds = true
         
@@ -71,6 +73,7 @@ class ProfilePopupViewController: UIViewController {
         table.insert(newItem) { (dict, error) in
             self.pratiButton.isEnabled = false
             self.pratiButton.alpha = 0.3
+            NotificationCenter.default.post(name: Notification.Name("noviStatus"), object: nil)
         }
     }
     

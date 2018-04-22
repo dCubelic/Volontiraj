@@ -37,6 +37,7 @@
 		B41512B6208BC62400FF9261 /* Akcija.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B5208BC62400FF9261 /* Akcija.swift */; };
 		B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512B9208BE8A500FF9261 /* NewsFeed.swift */; };
 		B41512BF208C2BD200FF9261 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512BE208C2BD200FF9261 /* RegisterViewController.swift */; };
+		B41512C1208C39D500FF9261 /* NovaAkcijaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		B41512B5208BC62400FF9261 /* Akcija.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Akcija.swift; sourceTree = "<group>"; };
 		B41512B9208BE8A500FF9261 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		B41512BE208C2BD200FF9261 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaAkcijaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				B41512AF208BB94400FF9261 /* ProfilViewController.swift */,
 				B41512B1208BBED000FF9261 /* ProfilePopupViewController.swift */,
+				B41512C0208C39D500FF9261 /* NovaAkcijaViewController.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B4151297208B7A3000FF9261 /* UITableView+V.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 				B4151290208B77D000FF9261 /* AkcijaCollectionViewCell.swift in Sources */,
+				B41512C1208C39D500FF9261 /* NovaAkcijaViewController.swift in Sources */,
 				B41512B2208BBED000FF9261 /* ProfilePopupViewController.swift in Sources */,
 				B41512BA208BE8A500FF9261 /* NewsFeed.swift in Sources */,
 				B41512A1208B89CE00FF9261 /* StatusTableViewCell.swift in Sources */,

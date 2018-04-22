@@ -24,6 +24,7 @@ class ProfilViewController: UIViewController {
         
         guard let currentUser = User.currentUser else { return }
         
+        personImageView.image = UIImage(named: currentUser.ime) ?? #imageLiteral(resourceName: "Person")
         personNameLabel.text = "\(currentUser.ime) \(currentUser.prezime)"
         brojSatiLabel.text = "\(currentUser.satiVolontiranja)"
         
@@ -58,7 +59,17 @@ class ProfilViewController: UIViewController {
         }
         
     }
-
+    
+    @IBAction func novaAkcijaAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(ofType: NovaAkcijaViewController.self)
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func odjavaAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ProfilViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
