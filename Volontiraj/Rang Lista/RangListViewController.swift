@@ -26,7 +26,7 @@ class RangListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadUsers()
+        loadUsers() 
         
         volonterMjesecaImageView.layer.cornerRadius = volonterMjesecaImageView.frame.height / 2
         volonterMjesecaImageView.layer.masksToBounds = true

@@ -30,7 +30,7 @@ class AkcijaDetailViewController: UIViewController {
     var users: [User] = []
     var going = false
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { 
         super.viewDidLoad()
 
         guard let akcija = akcija else { return }
